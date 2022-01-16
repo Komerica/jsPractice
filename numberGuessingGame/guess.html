@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Number Guessing Game | COMP1073 Client-Side JavaScript</title>
+    <link rel="stylesheet" href="./guess.css" />
+    <script defer src="./guess.js"></script>
+  </head>
+
+  <body>
+    <h1>Number Guessing Game</h1>
+    <p>
+      I have picked a random number between 1 and 50. You have 10 chances to
+      guess the number.
+    </p>
+    <!-- Guessing form controls -->
+    <label for="guessField">Enter a guess: </label>
+    <input type="text" id="guessField" />
+    <button id="submitGuess">Submit guess</button>
+    <!-- Elements to contain feedback for user -->
+    <section>
+      <!-- Just to get rid of error in html validator -->
+      <h2>Version 6.9</h2>
+      <p id="guesses"></p>
+      <p id="lastResult"></p>
+      <p id="lowOrHi"></p>
+      <p id="guessesLeft"></p>
+    </section>
+  </body>
+</html>
