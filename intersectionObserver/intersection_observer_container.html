@@ -9,12 +9,20 @@
         box-sizing: border-box;
       }
 
+      .container {
+        width: 600px;
+        height: 800px;
+        margin: 200px;
+        overflow-y: scroll;
+        background-color: lightyellow;
+      }
+
       .box {
         width: 300px;
         height: 300px;
         margin: 80px auto;
         background-color: plum;
-        transition: 5000ms;
+        transition: 350ms;
       }
 
       .box.active {
@@ -23,32 +31,35 @@
     </style>
   </head>
   <body>
-    <div class="box">1</div>
-    <div class="box">2</div>
-    <div class="box">3</div>
-    <div class="box">4</div>
-    <div class="box">5</div>
-    <div class="box">6</div>
-    <div class="box">7</div>
-    <div class="box">8</div>
-    <div class="box">9</div>
-    <div class="box">10</div>
-    <div class="box">11</div>
-    <div class="box">12</div>
-    <div class="box">13</div>
-    <div class="box">14</div>
-    <div class="box">15</div>
-    <div class="box">16</div>
-    <div class="box">17</div>
-    <div class="box">18</div>
-    <div class="box">19</div>
-    <div class="box">20</div>
+    <div class="container">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+      <div class="box">4</div>
+      <div class="box">5</div>
+      <div class="box">6</div>
+      <div class="box">7</div>
+      <div class="box">8</div>
+      <div class="box">9</div>
+      <div class="box">10</div>
+      <div class="box">11</div>
+      <div class="box">12</div>
+      <div class="box">13</div>
+      <div class="box">14</div>
+      <div class="box">15</div>
+      <div class="box">16</div>
+      <div class="box">17</div>
+      <div class="box">18</div>
+      <div class="box">19</div>
+      <div class="box">20</div>
+    </div>
 
     <script>
       const boxes = document.querySelectorAll(".box");
       const options = {
+        // viewport가 어떻든 바깥에 적용된 컨테이너 기준으로 색을 변경하고 싶으면 root: document.querySelector(".container")
         root: null, // (Default:null -> Viewport 기준으로 하기때문에 사용자에게 보여지면, 즉 viewport범위안에 들면 콜백함수 실행(색변경))
-        // viewport에 보이는 200px까지는 plum->purple 변하지 않음! (Default:0px)
+        // rootMargin: "200px" -> viewport에 보이는 200px까지는 plum->purple 변하지 않음! (Default:0px)
         rootMargin: "0px",
         // 상자가 얼마만큼 보여야 콜백함수가 실행되는가(plum->purple) (Default:0)
         //    + 0~1 (100%)  Ex) threshold: 1 -> 상자 전체가 viewport에 다보여야 콜백함수 실행(색바뀜)
